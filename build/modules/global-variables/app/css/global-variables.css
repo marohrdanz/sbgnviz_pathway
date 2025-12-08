@@ -1,0 +1,44 @@
+/*
+
+MIT License
+
+Copyright (c) 2025 The University of Texas MD Anderson Cancer Center
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the 'Software'), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+/* This file defines css styles that are specific to the global-variables of the pipeline report.
+ *
+ * To avoid possible confusion and/or conflicts with other modules, all
+ * identifiers, class names, etc. used in this section should be prefixed
+ * with "gv-".
+ */
+
+hr.gv-bottom-rule {
+  border-top: 10px solid #fdd;
+}
+
+/* Show the errors in the TOC in red to highlight.
+ *
+ * data-unique is derived from the contents of the H1 entry in index.html:
+ * - spaces are replaced by underscores
+ * - / character is removed
+ */
+.tocify-header:has([data-unique="E_Errors_andor_missing_values_detected_in_input_data"]) {
+  color: red;
+}

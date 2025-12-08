@@ -1,0 +1,58 @@
+<!--
+
+MIT License
+
+Copyright (c) 2025 The University of Texas MD Anderson Cancer Center
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the 'Software'), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<!--
+  This HTML fragment will be inserted into the pipeline report
+  as the global-variables section.
+
+  To avoid possible confusion and/or conflicts with other modules, all
+  identifiers, class names, etc. used in this section should be prefixed
+  with "gv-".
+-->
+<div id="gv-data-error" style="display: none;">
+  <!-- See CSS selector for this element if you change the H1 content below. -->
+  <H1>E Errors and/or missing values detected in input data</H1>
+  <div id="gv-duplicateMetabolitesDiv" style="display: none;">
+    <H2>E.1 Duplicate values in Metabolite Name Key</H2>
+  </div>
+  <div id="gv-unknownPathwaysDiv" style="display: none;">
+    <H2>E.2 Unknown pathways in Metabolite Name Key</H2>
+    <P>The following pathway names were found in the Metabolite Name Key but are not defined in the pathways database:</P>
+    <DIV id="gv-unknownPathwayNames"></DIV>
+  </div>
+  <div id="gv-unknownMetabolitesDiv" style="display: none;">
+    <H2>E.3 Unknown metabolites in data</H2>
+    <P id="gv-unknownMetaboliteSummary"></P>
+    <P>The following metabolite names were found in the data but are not defined in the Metabolite Name Key:</P>
+    <DIV id="gv-unknownMetaboliteNames"></DIV>
+  </div>
+  <div id="gv-unknownPathwayMetabolitesDiv" style="display: none;">
+    <H2>E.4 Unknown metabolites in Pathway Diagrams</H2>
+  </div>
+  <div id="gv-unshownMetabolitesDiv" style="display: none;">
+    <H2>E.5 Metabolites not shown in any Pathway Diagram</H2>
+  </div>
+  <hr class="gv-bottom-rule"/>
+</div>

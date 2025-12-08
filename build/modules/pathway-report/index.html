@@ -1,0 +1,132 @@
+<!--
+
+MIT License
+
+Copyright (c) 2025 The University of Texas MD Anderson Cancer Center
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the 'Software'), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<!--
+  This HTML fragment will be inserted into the pipeline report
+  as the Pathways section.
+
+  To avoid possible confusion and/or conflicts with other modules, all
+  identifiers, class names, etc. used in this section should be prefixed
+  with "pm-".
+-->
+<div id="pm-module-wrapper">
+    <div id="pm-visiblePathwayTable">
+        <div class="pm-buttonbar">
+	  <span id="pm-pathwayVersionNumber">Version: 2.0.0</span>
+	  <button id="pm-hidePathwayTable">Hide pathway table</button>
+	  <button id="pm-showPathwayScoringMethods" style="">Show table editor</button>
+	  <button id="pm-hidePathwayScoringMethods" style="display:none;">Hide table editor</button>
+	</div>
+	<div id="pm-pathwayScoringMethods" style="display:none;">
+	  <div>
+	    <label for="pm-test-select">Column name:</label>
+	    <select id="pm-test-select"><!-- Populated at run time. --></select>
+	  </div>
+	  <div class="pm-table-flexrow">
+	    <label for="pm-score-algorithm">Method:</label>
+	    <select id="pm-score-algorithm"><!-- Populated at run time. --></select>
+	    <span id="pm-algorithm-summary"></span>
+	  </div>
+	  <div>
+	    <label for="pm-score-covSelect">Covariate:</label>
+	    <select id="pm-score-covSelect"><!-- Populated at run time. --></select>
+	  </div>
+	  <div class="pm-table-flexrow">
+	    <label for="pm-score-grp1Select">Group 1:</label>
+	    <select id="pm-score-grp1Select" multiple><!-- Populated at run time. --></select>
+	    <label for="pm-score-grp2Select">Group 2:</label>
+	    <select id="pm-score-grp2Select" multiple><!-- Populated at run time. --></select>
+	    <span id="pm-group-error"></span>
+	  </div>
+	  <div class="pm-table-flexrow">
+	    <label for="pm-name-input">Name:</label>
+	    <input id="pm-name-input" type="text">
+	    <span id="pm-name-error"></span>
+	  </div>
+	  <div class="pm-buttonbar">
+	    <button id="pm-remove-button" class="btn">Remove</button>
+	    <button id="pm-reset-button" class="btn">Reset</button>
+	    <button id="pm-apply-button" class="btn btn-primary">Apply</button>
+	  </div>
+	</div>
+	<p>To display a pathway, click that pathway’s entry in the table below.
+	Click on a column heading to sort entries by that column. Click on the column heading again to toggle the sort direction.
+	If you enter a search term in the search box, only matching pathways will be included in the table.
+	The table is paginated. You can move between pages using the controls at the lower right.  You can also
+	change the page size (number of pathways included per page).
+	</p>
+	<table id="pm-pathwayTable">
+	  <!-- Table contents initialized in app/pathwayTable.js -->
+	</table>
+    </div>
+    <div id="pm-hiddenPathwayTable" style="display: none;">
+	<button id="pm-showPathwayTable">Show pathway table</button>
+	<span id="pm-selectedPathwayLabel">Selected pathway:</span>
+	<span id="pm-selectedPathway"></span>
+    </div>
+
+    <div id="pm-main">
+        <!-- <p class="alignleft">SBGNViz <a href="http://github.com">(GitHub)</a></p> -->
+        <button class="pm-alignright"><a id="pm-save-as-svg" href="#">Save as SVG</a></button>
+    </div>
+    <div id="pm-sbgn-network-container"></div>
+    </div>
+    <div id="pm-leftBox">
+	<label id="pm-sampleOrderLabel" for="pm-covariates">Sample order: </label>
+	<select id="pm-covariates"></select>
+
+	<label id="pm-summarizeGroupsLabel" for="pm-summarizeSelect">Show: </label>
+	  <select id="pm-summarizeSelect">
+	    <option value="replicates">Replicates</option>
+	    <option value="categories">Categories</option>
+	  </select>
+
+	<label id="pm-normalizationMethodLabel" for="pm-normalization_methods">Color scaling: </label>
+	<select id="pm-normalization_methods">
+	  <!-- Populated in app/main.js -->
+	</select>
+	<div class="pm-icon-wrapper">
+	  <button id="pm-normalization-tool-tip" class="tool-tip pm-tool-tip"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAA4UlEQVQ4jZ3SQUoDQRQE0IfgCF5AmAO4MLrwUF7BeAnFIUHvYtQsxBNMcgw3URdCxCymW4a2ewYsKBj61y+qhs9fnKHBCh+BK9ziNKP/xQHu8I2fAreYo8otPw8spnxKTe4TwRcuUQdOw1tfM+t3TmNPMxWvMnUmws9JI9Zh6RUv4bvO6G5gPdJ3HQyOMrMWNgPLSxwHg4vMfDNmEHGOt5LBUIWIz8K83cNCGVF4WJg/0J3ndiRB6SpPomD+D4OmH6XCY0GY4wL7aZ9Kd56lOjF2k1vuY6K7sBbvgS2u+50jdrejoaBD9HntAAAAAElFTkSuQmCC"
+	  /></button>
+	</div>
+
+	<label for="pm-loColor">Low color:</label>
+	<input id="pm-loColor" type="color" value="#0000ff">
+	<label for="pm-hiColor">High color:</label>
+	<input id="pm-hiColor" type="color" value="#ff0000">
+
+	<div id="pm-legendDialog" class="pm-dialog" title="Legend Dialog">
+	  <div id="pm-figureLegend"></div>
+	</div>
+    </div>
+    <div id="pm-nodeDataTable">
+	<span>Compound:</span>
+	<h4 id="pm-metaboliteName"><span id="pm-displayName"></span> (<span id="pm-compoundName"></span>)</h4>
+	<div id="pm-tableDiv">
+	    <table id="pm-sampleValueTable"></table>
+	</div>
+    </div>
+
+</div>

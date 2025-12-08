@@ -1,0 +1,263 @@
+/*
+
+MIT License
+
+Copyright (c) 2025 The University of Texas MD Anderson Cancer Center
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the 'Software'), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.cy-panzoom {
+    z-index: 1000 !important;
+}
+
+#pm-pathwayVersionNumber {
+  display: inline-block;
+  color: blue;
+}
+
+#pm-sbgn-network-container {
+    margin: auto;
+    border: 1px solid #ddd;
+    height: 680px;
+    width: 800px;
+    overflow: hidden;
+}
+
+#pm-main {
+    width: 100%;
+    margin: 1em auto 0 0;
+    font-family: Arial;
+}
+
+.pm-alignleft {
+    float: left;
+}
+
+.pm-alignright {
+    float: right;
+}
+
+#pm-module-wrapper a:link {
+    text-decoration: none;
+}
+
+#pm-leftBox {
+    margin-top: 1em;
+    overflow: visible;
+    position: relative
+}
+
+#pm-sbgn-network-container {
+    width: 100%;
+}
+
+#pm-summarizeSelect:disabled {
+  color: #999;
+  background-color: #eee;
+}
+
+#pm-sampleOrderLabel {
+  margin-top: 1em;
+}
+
+#pm-summarizeGroupsLabel {
+  margin-top: 1em;
+  margin-inline-start: 1em;
+}
+
+#pm-normalizationMethodLabel {
+  margin-top: 1em;
+  margin-inline-start: 3em;
+}
+
+
+#pm-figureLegend {
+  margin: 1em;
+}
+
+#pm-tableDiv {
+    height: 400px;
+    overflow: auto;
+}
+
+.ui-dialog:has(.pm-dialog) {
+  z-index: 1000 !important;
+}
+
+/* Use to wrap an icon that has a tool tip.
+ * Provides a relative position for use by the tool tip.
+ * Sized to occupy the space required to show the icon.
+ * Allows visible overflow so the tool tip can be seen.
+ */
+.pm-icon-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+}
+
+/* Create an efter element when the user hovers over the icon.
+ * Currently max-width is fixed (unless overridden by a more specific rule.
+ * Something like  width: attr(title-width) is not implemented (4/5/2025).
+ */
+.pm-tool-tip[title-new]:hover:after {
+    content: attr(title-new);
+    border: #c0c0c0 1px dotted;
+    padding: 0.5em;
+    display: block;
+    background-color: white;
+    color: black;
+    width: max-content;
+    max-width: 17em;
+}
+
+/* Include within an icon wrapper or similar.
+ * Absolutely positioned at the wrapper's location.
+ * z-index so tool tip appears on top of other elements.
+ * - It does not work if applied to the after element.
+ */
+.pm-tool-tip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px;
+    text-align: left; /* Stops the fixed content moving when the after element is added. */
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    z-index: 500;
+}
+
+#pm-pathwayTable {
+    width: 100%;
+}
+
+#pm-pathwayTable TH {
+    text-align: left;
+}
+
+#pm-selectedPathwayLabel {
+    padding-inline: 0.25em;
+}
+
+#pm-selectedPathway {
+    font-weight: bold;
+}
+
+#pm-metaboliteName {
+    display: inline-block;
+    padding-inline: 0.25em 3em;
+}
+
+#pm-sampleValueTable TH {
+    text-align: left;
+    padding: 0px 0.25em;
+}
+
+#pm-sampleValueTable TD {
+    padding: 0px 0.25em;
+}
+
+#pm-pathwayScoringMethods {
+  border: 1px solid red;
+  padding: 2px 5px;
+}
+
+.pm-buttonbar {
+}
+
+.pm-buttonbar button {
+  margin-inline: 0.2em;
+}
+
+button.pm-moveCovariateValue {
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  margin: 2px;
+}
+
+button.pm-moveCovariateValue:disabled {
+  background: white;
+  opacity: 20%;
+}
+
+button.pm-moveCovariateValue::after {
+  content: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1 7 10.5 0-2-5 2.5 0 3 6-3 6-2.5 0 2-5-10.5 0z' stroke-width='1'/%3E%3C/svg%3E ");
+}
+
+button.pm-moveCovariateValue[data-direction="down"] {
+  rotate: 90deg;
+}
+
+button.pm-moveCovariateValue[data-direction="up"] {
+  rotate: -90deg;
+}
+
+#pm-pathwayScoringMethods > select {
+  margin: 0.2em 0;
+}
+
+#pm-pathwayScoringMethods > div {
+  margin: 0.2em 0;
+}
+
+#pm-pathwayScoringMethods label {
+  margin-left: 0.5em;
+  margin-right: 0.25em;
+}
+
+#pm-pathwayScoringMethods button {
+  margin: 0.5em;
+}
+
+#pm-pathwayScoringMethods button[disabled] {
+  opacity: 0.4;
+}
+
+.pm-table-flexrow {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5em;
+}
+
+#pm-algorithm-summary {
+  display: inline-block;
+  vertical-align: top;
+  flex-grow: 1;
+  color: blue;
+  margin-left: 3em;
+}
+
+#pm-group-error, #pm-name-error {
+  display: inline-block;
+  vertical-align: top;
+  flex-grow: 1;
+  color: red;
+  margin-left: 0.5em;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "metabolomics-pipeline",
+  "dependencies": {
+    "sbgnviz": "file:sbgnviz",
+    "cytoscape": "github:iVis-at-Bilkent/cytoscape.js#543f0ace1718e260ccbff52d49cb83bf4992a69b"
+  },
+  "workspaces": [ MODULES ],
+  "overrides": {
+    "sbgnviz": "$sbgnviz",
+    "cytoscape-edge-editing": { "cytoscape": "$cytoscape" },
+    "cytoscape-expand-collapse": { "cytoscape": "$cytoscape" },
+    "pathway-report": { "cytoscape": "$cytoscape" }
+  }
+}

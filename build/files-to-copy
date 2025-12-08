@@ -1,0 +1,5 @@
+node_modules
+pathway-loader
+report-modules
+scripts/generate_pathway_loader.sh
+scripts/parse-pathway-diagrams.js

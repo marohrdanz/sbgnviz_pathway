@@ -1,0 +1,38 @@
+{
+    "name": "global-variables-js",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build-bundle-js": "browserify app/main.js -o app/bundle.js --debug",
+        "build-release": "npm run build-bundle-js",
+        "run-server": "node server.js",
+        "watch-js": "nodemon -e js --watch app --ignore app/bundle.js -x \"npm run build-bundle-js\"",
+        "watch-server": "nodemon server.js",
+        "start": "parallelshell \"npm run watch-js\" \"npm run watch-server\"",
+        "build": "webpack --stats-error-details"
+    },
+    "homepage": "",
+    "dependencies": {
+        "cssnano": "^7.1.2",
+	"jstat": "^1.9.6",
+        "postcss-loader": "^8.2.0",
+	"sha256": "^0.2.0"
+    },
+    "devDependencies": {
+        "browserify": "^11.2.0",
+        "css-loader": "^6.5.1",
+        "csv-loader": "^3.0.3",
+        "express": "4.14.0",
+        "html-webpack-plugin": "^5.5.0",
+        "inline-chunk-html-plugin": "^1.1.1",
+        "nodemon": "1.11.0",
+        "parallelshell": "3.0.1",
+        "raw-loader": "^4.0.2",
+        "stream-browserify": "^3.0.0",
+        "style-loader": "^3.3.1",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.67.0",
+        "webpack-cli": "^4.9.2",
+        "xml-loader": "^1.2.1"
+    }
+}

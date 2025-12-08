@@ -1,0 +1,50 @@
+{
+    "name": "metabolomics-pipeline-pathways-section",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build-bundle-js": "browserify app/main.js -o app/bundle.js --debug",
+        "build-release": "npm run build-bundle-js",
+        "watch-js": "nodemon -e js --watch app --ignore app/bundle.js -x \"npm run build-bundle-js\"",
+        "build": "webpack --stats-error-details"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MD-Anderson-Bioinformatics/sbgnviz_pathway.git"
+    },
+    "bugs": {
+        "url": "https://github.com/MD-Anderson-Bioinformatics/sbgnviz_pathway/issues"
+    },
+    "homepage": "",
+    "dependencies": {
+        "cssnano": "^7.1.2",
+        "cytoscape": "github:iVis-at-Bilkent/cytoscape.js#543f0ace1718e260ccbff52d49cb83bf4992a69b",
+        "cytoscape-edge-editing": "^2.0.1",
+        "cytoscape-expand-collapse": "4.0.0",
+        "cytoscape-panzoom": "~2.5.2",
+        "cytoscape-popper": "^1.0.2",
+        "d3": "^7.4.4",
+        "filesaverjs": "~0.2.2",
+        "jquery": "~3.3.1",
+        "konva": "^8.3.2",
+        "postcss-loader": "^8.2.0",
+        "sbgnviz": "^6.0.4",
+        "tippy.js": "^3.4.0"
+    },
+    "devDependencies": {
+        "browserify": "^11.2.0",
+        "css-loader": "^6.5.1",
+        "csv-loader": "^3.0.3",
+        "express": "4.14.0",
+        "html-webpack-plugin": "^5.5.0",
+        "inline-chunk-html-plugin": "^1.1.1",
+        "nodemon": "1.11.0",
+        "parallelshell": "3.0.1",
+        "raw-loader": "^4.0.2",
+        "stream-browserify": "^3.0.0",
+        "style-loader": "^3.3.1",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.67.0",
+        "webpack-cli": "^4.9.2",
+        "xml-loader": "^1.2.1"
+    }
+}
