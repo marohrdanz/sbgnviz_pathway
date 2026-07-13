@@ -28,7 +28,7 @@
 ##  *** START of node-base ***
 ####
 
-FROM node:22.4.1-bookworm-slim AS node-base
+FROM node:22.23.1-bookworm-slim AS node-base
 
 RUN apt-get update && \
     apt-get upgrade -y && \
