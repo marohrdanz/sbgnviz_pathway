@@ -20,6 +20,7 @@
     },
     "devDependencies": {
         "browserify": "^11.2.0",
+        "crypto-browserify": "^3.12.1",
         "css-loader": "^6.5.1",
         "csv-loader": "^3.0.3",
         "express": "4.14.0",

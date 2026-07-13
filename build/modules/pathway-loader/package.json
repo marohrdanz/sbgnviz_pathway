@@ -10,10 +10,12 @@
       "@rgrove/parse-xml": "^4.2.0"
     },
     "devDependencies": {
+        "crypto-browserify": "^3.12.1",
         "csv-loader": "^3.0.3",
         "html-webpack-plugin": "^5.5.0",
         "inline-chunk-html-plugin": "^1.1.1",
         "raw-loader": "^4.0.2",
+        "stream-browserify": "^3.0.0",
         "terser-webpack-plugin": "^5.3.14",
         "url-loader": "^4.1.1",
         "webpack": "^5.67.0",
