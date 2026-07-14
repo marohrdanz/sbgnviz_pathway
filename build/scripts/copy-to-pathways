@@ -34,6 +34,6 @@ if [ $# -eq 1 ] ; then
   trap persist EXIT
 fi
 
-rsync -a --files-from=/workspace/files-to-copy -r --delete /workspace/ /pathways/
+rsync -a --files-from=/workspace/files-to-copy -r --delete --chmod=Da+rx,Fa+r /workspace/ /pathways/
 
 exit 0
